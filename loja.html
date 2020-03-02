@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,700" rel="stylesheet">
+
+    <title></title>
+
+  </head>
+  <body style=" font-family: Roboto; font-size: 2rem; font-weight: 300;">
+
+    <div class="w100 p-3 bg-dark mb-3">
+      <p class="text-center text-white p-0 mb-1" style=" font-family: Roboto; font-size: 2rem; font-weight: 700;">Teste Opsfactor</p>
+    </div>
+
+
+    <div class="" id="loja">
+      <div class=" mx-auto my-2 w-75">
+
+    <!-- SELECT CATEGORIAS -->
+        <div class="input-group mb-3">
+          <select v-on:change="selecionaCategoria()" class="custom-select" ref="selectCategoria" id="selectCategoria">
+            <option value="0">Escolha uma categoria</option>
+            <option v-for="option in optionsCategoria" v-bind:value="option.value"> {{option.text}} </option>
+          </select>
+        </div>
+
+        <!-- SELECT PRODUTOS -->
+        <div v-show="categoria > 0" class="input-group mb-3">
+          <select v-on:change="selecionaProduto()" class="custom-select" ref="selectProduto" id="selectProduto">
+            <option value="0">Escolha um {{nomeCategoria}}</option>
+            <option v-for="option in optionsProduto" v-bind:value="option.value"> {{option.text}} </option>
+          </select>
+        </div>
+
+        <!-- IMAGEM -->
+        <div class="" style="height: 15vw">
+          <img v-show="produto > 0" v-bind:src="imagem" alt="" style="height: 15vw;">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VUE.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="./js/loja.js"></script>
+
+
+
+    <!-- BOOTSTRAP -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </body>
+</html>
