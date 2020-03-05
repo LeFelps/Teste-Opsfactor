@@ -7,7 +7,6 @@ var loja = new Vue({
       imagem: '',
       selected: '0',
       produto: 0,
-      nomeProduto: '',
       optionsCategoria:[
         {text: 'Eletrodomésticos', value: '1'},
         {text: 'Eletrônicos', value: '2'},
