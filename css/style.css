@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+
+}
+
+.seletor button{
+  background-color: #000;
+}
+
+.botao{
+  font-size: .6em;
+  height: 100%;
+  background-color: #555;
+  color: white;
+  border-radius: 5px;
+  border: solid 1px #555;
+}
+.botao:hover, .active{
+  background-color: #fff;
+  color: #555;
+  outline: none;
+  cursor: pointer;
+
+}
