@@ -89,33 +89,36 @@
       calculoMedia(){
 
         var select = this.$refs.selectDatas
-        console.log(select.value);
-        var indice = parseInt(select.value)
-        console.log(indice);
+        if (select.value != 'a') {
 
-        var mediaMovel
+          var indice = parseInt(select.value)
 
-        if (indice <= 97 && indice >=2) {
-          mediaMovel = (parseFloat(this.valores[indice-2]) + parseFloat(this.valores[indice-1]) + parseFloat(this.valores[indice])+ parseFloat(this.valores[indice+1]) + parseFloat(this.valores[indice+2]))/5
-        } else if(indice > 97){
-          if (indice == 98) {
-            mediaMovel = (parseFloat(this.valores[indice-2]) + parseFloat(this.valores[indice-1]) + parseFloat(this.valores[indice]) + parseFloat(this.valores[indice+1]))/4
-          }else{
-            mediaMovel = (parseFloat(this.valores[indice-2]) + parseFloat(this.valores[indice-1]) + parseFloat(this.valores[indice]))/3
+          var mediaMovel
 
+          if (indice <= 97 && indice >=2) {
+            mediaMovel = (parseFloat(this.valores[indice-2]) + parseFloat(this.valores[indice-1]) + parseFloat(this.valores[indice])+ parseFloat(this.valores[indice+1]) + parseFloat(this.valores[indice+2]))/5
+          } else if(indice > 97){
+            if (indice == 98) {
+              mediaMovel = (parseFloat(this.valores[indice-2]) + parseFloat(this.valores[indice-1]) + parseFloat(this.valores[indice]) + parseFloat(this.valores[indice+1]))/4
+            }else{
+              mediaMovel = (parseFloat(this.valores[indice-2]) + parseFloat(this.valores[indice-1]) + parseFloat(this.valores[indice]))/3
+
+            }
+          } else {
+            if (indice == 1) {
+              mediaMovel = ((this.valores[indice+2] + this.valores[indice+1] + this.valores[indice] + this.valores[indice-1])/4)
+            }else{
+              mediaMovel = ((this.valores[indice+2] + this.valores[indice+1] + this.valores[indice])/3)
+
+            }
           }
+
+          this.mediaMovel = mediaMovel.toFixed(2)
+          this.mostraMedia = true
+
         } else {
-          if (indice == 1) {
-            mediaMovel = ((this.valores[indice+2] + this.valores[indice+1] + this.valores[indice] + this.valores[indice-1])/4)
-          }else{
-            mediaMovel = ((this.valores[indice+2] + this.valores[indice+1] + this.valores[indice])/3)
-
-          }
+          this.mostraMedia = false
         }
-
-        this.mediaMovel = mediaMovel
-        this.mostraMedia = true
-
       }
     }
   })
