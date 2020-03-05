@@ -52,7 +52,7 @@
           <div v-show="inicializado" class="input-group mb-3 mx-auto w-75">
             <select v-on:change="calculoMedia()" class="custom-select" ref="selectDatas" id="selectDatas">
               <option value="a">Escolha uma data</option>
-              <option v-for="dia in dias" v-bind:value="dias.value"> {{dias.data}} </option>
+              <option v-for="dia in dias" v-bind:value="dia.value"> {{dia.data}} </option>
             </select>
           </div>
           <p class="w-75 mx-auto" v-show="mostraMedia">Média Móvel: {{mediaMovel}}</p>
