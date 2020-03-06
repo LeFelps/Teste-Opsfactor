@@ -55,7 +55,7 @@
             // POPULANDO AS VARIÁVEIS AUXILIARES
             datas.forEach((item, i) => {
               auxGrafico.unshift([item, parseFloat(dados['Time Series (Daily)'][item]['1. open']), parseFloat(dados['Time Series (Daily)'][item]['4. close'])])
-              acoes.dias.unshift({data: item, value:i},)
+              acoes.dias.unshift({data: item, value:Math.abs(i-99)},)
               acoes.valores.unshift(parseFloat(dados['Time Series (Daily)'][item]['4. close']))
             });
 
