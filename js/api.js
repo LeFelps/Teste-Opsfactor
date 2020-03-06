@@ -84,6 +84,9 @@
 
           this.mostraMedia = false
           this.dias = acoes.dias
+          var select = this.$refs.selectDatas
+          select.value = 'a'
+
 
       },
       calculoMedia(){
