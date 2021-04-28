@@ -12,12 +12,12 @@ var loja = new Vue({
         {text: 'Eletrônicos', value: '2'},
       ],
       eletrodomesticos:[
-        {text: 'Geladeira A', value: '1', url:'https://electrolux.vteximg.com.br/arquivos/ids/194996/geladeira-refrigerador-frost-free-bottom-freezer-598-litros-electrolux-DB84X_Detalhe2.jpg?v=636994866574070000'},
-        {text: 'Geladeira B', value: '2', url:'https://electrolux.vteximg.com.br/arquivos/ids/183699-500-500/Refrigerador-Side-By-Side-Frost-Free-504L-Inox-SS72X.png?v=636469699350000000'},
+        {text: 'Geladeira A', value: '1', url:'./images/GeladeiraA.png'},
+        {text: 'Geladeira B', value: '2', url:'./images/GeladeiraB.png'},
       ],
       eletronicos:[
-        {text: 'Televisão A', value: '1', url:'https://images.samsung.com/is/image/samsung/br-uhdtv-nu7400-un50nu7400gxzd-frontblack-113032186?$PD_GALLERY_L_JPG$ '},
-        {text: 'Televisão B', value: '2', url:'https://img.global.news.samsung.com/br/wp-content/uploads/2017/02/smart-tv.png '},
+        {text: 'Televisão A', value: '1', url:'./images/TelevisaoA.png'},
+        {text: 'Televisão B', value: '2', url:'./images/TelevisaoB.png'},
       ],
       optionsProduto:[],
     },

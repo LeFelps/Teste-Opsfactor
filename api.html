@@ -19,37 +19,36 @@
     </div>
 
     <div class="" id="acoes">
-      <div class=" mx-auto my-2 w-75">
+      <div class=" mx-auto my-2">
         <!-- SELETOR DE AÇÕES -->
         <div class="container-fluid seletor w-100">
 
-          <div class="row m-3 wx-auto">
+          <div class="row m-3 mx-auto col-12 col-sm-12 col-md-10 col-lg-10">
             <!-- BOTÃO APPLE -->
-            <div class="px-2 col-12 col-sm-12 col-md-4 col-lg-4 ">
+            <div class="px-2 col-12 col-sm-12 col-md-4 col-lg-4 my-2">
               <div class="py-2 botao px-3 mx-auto text-center w-100" v-on:click="request('AAPL')">
                 Apple
               </div>
             </div>
             <!-- BOTÃO US STEEL -->
-            <div class="px-2 col-12 col-sm-12 col-md-4 col-lg-4 ">
+            <div class="px-2 col-12 col-sm-12 col-md-4 col-lg-4 my-2">
               <div class="py-2 botao px-3 mx-auto text-center w-100" v-on:click="request('X')">
                 US Steel
               </div>
             </div>
             <!-- BOTÃO TESLA -->
-            <div class="px-2 col-12 col-sm-12 col-md-4 col-lg-4 ">
+            <div class="px-2 col-12 col-sm-12 col-md-4 col-lg-4 my-2">
               <div class="py-2 botao px-3 mx-auto text-center w-100" v-on:click="request('TSLA')">
                 Tesla
               </div>
             </div>
-
-            <!-- GRAFICO DE AÕES -->
-            <div id="grafico" style="width: 100%; height: 20vw"></div>
-
           </div>
 
+          <!-- GRAFICO DE AÕES -->
+          <div id="grafico" style="width: 100%; height:20rem"></div>
+
           <!-- SELECT DATAS -->
-          <div v-show="inicializado" class="input-group mb-3 mx-auto w-75">
+          <div v-show="inicializado" class="input-group mt-5 mb-3 mx-auto w-75">
             <select v-on:change="calculoMedia()" class="custom-select" ref="selectDatas" id="selectDatas">
               <option value="a">Escolha uma data</option>
               <option v-for="dia in dias" v-bind:value="dia.value"> {{dia.data}} </option>
@@ -57,7 +56,20 @@
           </div>
           <p class="w-75 mx-auto" v-show="mostraMedia">Média Móvel: {{mediaMovel}}</p>
         </div>
+        
+        <div class="container-fluid seletor w-100 fixed-bottom">
+          <div class="row m-3 mx-auto col-12 col-sm-12 col-md-10 col-lg-10">
 
+            <!-- BOTÃO LOJA -->
+            <div class="px-2 col-12 col-sm-12 col-md-4 col-lg-4 my-2 mx-auto">
+              <a href="./loja.html">
+                <div class="py-2 botao px-3 mx-auto text-center w-100">
+                  Ir para a loja
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>

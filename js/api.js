@@ -35,6 +35,7 @@
 
             // CAPTURA DOS DADOS
             var dados = JSON.parse(this.response);
+            console.log(dados);
 
             // SEPARANDO SOMENTE DATAS
             var datas = Object.keys(dados['Time Series (Daily)']);
@@ -54,25 +55,50 @@
 
             // POPULANDO AS VARIÁVEIS AUXILIARES
             datas.forEach((item, i) => {
-              auxGrafico.unshift([item, parseFloat(dados['Time Series (Daily)'][item]['1. open']), parseFloat(dados['Time Series (Daily)'][item]['4. close'])])
+              auxGrafico.unshift([item, parseFloat(dados['Time Series (Daily)'][item]['3. low']),
+              parseFloat(dados['Time Series (Daily)'][item]['1. open']),              
+              parseFloat(dados['Time Series (Daily)'][item]['4. close']),
+              parseFloat(dados['Time Series (Daily)'][item]['2. high'])])
               acoes.dias.unshift({data: item, value:Math.abs(i-99)},)
               acoes.valores.unshift(parseFloat(dados['Time Series (Daily)'][item]['4. close']))
             });
 
             // ACRESCENTANDO LEGENDA
-            auxGrafico.unshift(['Dia', 'Abertura', 'Fechamento'])
+            auxGrafico.unshift(['Dia', 'Valor', '', '', ''])
 
             // CRIAÇÃO DO GRÁFICO
             function drawChart() {
 
+              console.log(auxGrafico);
+
               var dadosGrafico = google.visualization.arrayToDataTable(auxGrafico);
 
               var options = {
+                
+                legend: 'none',
 
-                legend: { position: 'bottom' }
+                colors: ['#000','#E55555','#2892CE'],
+
+                chartArea: {
+                  top: '0px',
+                  left: '0px'
+                },
+
+                candlestick: { 
+                  fallingColor: {
+                    fill: '#E55555',
+                    stroke: '#E55555'
+                  },
+                  risingColor: {
+                    fill: '#2892CE',
+                    stroke: '#2892CE'
+                  }
+                }
+
               };
+              
 
-              var chart = new google.visualization.LineChart(document.getElementById('grafico'));
+              var chart = new google.visualization.CandlestickChart(document.getElementById('grafico'));
 
               chart.draw(dadosGrafico, options);
             }
